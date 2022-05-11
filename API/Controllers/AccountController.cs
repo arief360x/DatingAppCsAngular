@@ -17,6 +17,7 @@ namespace API.Controllers
             _db = db;
         }
 
+        //Registering
         [HttpPost("register")]
         public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
         {
@@ -36,6 +37,33 @@ namespace API.Controllers
             return user;
         }
 
+        //Login
+        [HttpPost("login")]
+        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+        {
+            var user = await _db.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.UserName);
+            if(user == null) return Unauthorized("Invalid Username");
+
+            // Reverse calculation with the salt
+            using var hmac = new HMACSHA512(user.PasswordSalt);
+
+            // Hash the password from login password using salt from db
+            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+
+            // Check whether the computed hash is the same with the stored hash
+            for(int i = 0; i < computedHash.Length; i++)
+            {
+                if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password");
+            }
+
+            return user;
+
+
+        }
+
+
+
+        // Checking existing username
         private async Task<bool> UserExists(string username)
         {
             return await _db.Users.AnyAsync(x => x.UserName == username.ToLower());
