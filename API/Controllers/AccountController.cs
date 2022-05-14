@@ -1,5 +1,6 @@
 ﻿using API.Data;
 using API.DTOs;
+using API.Interfaces;
 using API.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,15 +12,17 @@ namespace API.Controllers
     public class AccountController : BaseApiController
     {
         private readonly ApplicationDbContext _db;
+        private readonly ITokenService _tokenService;
 
-        public AccountController(ApplicationDbContext db) 
+        public AccountController(ApplicationDbContext db, ITokenService tokenService) 
         {
             _db = db;
+            _tokenService = tokenService;
         }
 
         //Registering
         [HttpPost("register")]
-        public async Task<ActionResult<AppUser>> Register(RegisterDto registerDto)
+        public async Task<ActionResult<UserTokenDto>> Register(RegisterDto registerDto)
         {
             if(await UserExists(registerDto.UserName)) return BadRequest("Username has been taken");
 
@@ -34,12 +37,16 @@ namespace API.Controllers
 
             _db.Users.Add(user);
             await _db.SaveChangesAsync();
-            return user;
+            return new UserTokenDto
+            {
+                UserName = user.UserName,
+                Token = _tokenService.CreateToken(user)
+            };
         }
 
         //Login
         [HttpPost("login")]
-        public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
+        public async Task<ActionResult<UserTokenDto>> Login(LoginDto loginDto)
         {
             var user = await _db.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.UserName);
             if(user == null) return Unauthorized("Invalid Username");
@@ -56,7 +63,11 @@ namespace API.Controllers
                 if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("Invalid password");
             }
 
-            return user;
+            return new UserTokenDto
+            {
+                UserName = user.UserName,
+                Token = _tokenService.CreateToken(user)
+            };
 
 
         }
