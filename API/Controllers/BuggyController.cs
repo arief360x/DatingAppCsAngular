@@ -12,6 +12,7 @@ namespace API.Controllers
     public class BuggyController : BaseApiController
     {
         private readonly ApplicationDbContext _db;
+
         public BuggyController(ApplicationDbContext db)
         {
             _db = db;
