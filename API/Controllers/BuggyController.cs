@@ -36,16 +36,11 @@ namespace API.Controllers
         [HttpGet("server-error")]
         public ActionResult<string> GetServerError()
         {
-            try
-            {
-                var thing = _db.Users.Find(-1);
-                var thingToReturn = thing.ToString();
-                return thingToReturn;
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "server error");
-            }
+
+            var thing = _db.Users.Find(-1);
+            var thingToReturn = thing.ToString();
+            return thingToReturn;
+
 
         }
 
