@@ -7,8 +7,6 @@ import { AccountService } from 'src/app/_services/account.service';
   styleUrls: ['./not-found.component.css'],
 })
 export class NotFoundComponent implements OnInit {
-  model: any = {};
-
   constructor(public accountService: AccountService) {}
 
   ngOnInit(): void {}
