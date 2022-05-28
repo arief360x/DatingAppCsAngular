@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using API.Extensions;
 
 namespace API.Model
 {
@@ -18,7 +19,7 @@ namespace API.Model
 
         public DateTime Created { get; set; } = DateTime.Now;
 
-        public DateTime LastActive  { get; set; } 
+        public DateTime LastActive { get; set; }
 
         public string Gender { get; set; }
 
@@ -33,6 +34,11 @@ namespace API.Model
         public string Country { get; set; }
 
         public ICollection<Photo> Photots { get; set; }
+
+        public int GetAge()
+        {
+            return DateOfBirth.AgeCalculation();
+        }
 
     }
 }
