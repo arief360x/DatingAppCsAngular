@@ -60,3 +60,4 @@ D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\System.IdentityMod
 D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\Data\UserSeedData.json
