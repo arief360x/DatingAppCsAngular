@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj": {}
+    "d:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj": {
+    "d:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj",
+        "projectUniqueName": "d:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj",
+        "projectPath": "d:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Arief D\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\obj\\",
+        "outputPath": "d:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -26,8 +26,6 @@
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -46,6 +44,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.5, )"

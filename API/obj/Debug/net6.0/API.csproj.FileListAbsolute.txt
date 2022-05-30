@@ -61,3 +61,5 @@ D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\Microsoft.AspNetCo
 D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\Data\UserSeedData.json
+D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\AutoMapper.dll
+D:\Coding\PersonalProject\cs\DatingAppUd\API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
