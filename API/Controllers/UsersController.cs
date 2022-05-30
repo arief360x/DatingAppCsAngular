@@ -22,11 +22,18 @@ namespace API.Controllers
         }
 
         // [AllowAnonymous]
+        // [HttpGet]
+        // public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
+        // {
+        //     var users = await _userRepository.GetUsersAsync();
+        //     var returnUsers = _mapper.Map<IEnumerable<MemberDto>>(users);
+        //     return Ok(returnUsers);
+        // }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
         {
-            var users = await _userRepository.GetUsersAsync();
-            var returnUsers = _mapper.Map<IEnumerable<MemberDto>>(users);
+            var returnUsers = await _userRepository.GetMembersAsync();
             return Ok(returnUsers);
         }
 
@@ -37,12 +44,18 @@ namespace API.Controllers
         //     return await _db.Users.FindAsync(id);
         // }
 
+        // [HttpGet("{username}")]
+        // public async Task<ActionResult<MemberDto>> GetUser(string username)
+        // {
+        //     var user = await _userRepository.GetUserByUsernameAsync(username);
+        //     var returnUser = _mapper.Map<MemberDto>(user);
+        //     return returnUser;
+        // }
+
         [HttpGet("{username}")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
-            var user = await _userRepository.GetUserByUsernameAsync(username);
-            var returnUser = _mapper.Map<MemberDto>(user);
-            return returnUser;
+            return await _userRepository.GetMemberAsync(username);
         }
     }
 }

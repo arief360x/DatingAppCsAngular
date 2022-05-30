@@ -1765,11 +1765,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj",
+      "projectUniqueName": "D:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "d:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj",
+      "projectPath": "D:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\API.csproj",
       "packagesPath": "C:\\Users\\Arief D\\.nuget\\packages\\",
-      "outputPath": "d:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\obj\\",
+      "outputPath": "D:\\Coding\\PersonalProject\\cs\\DatingAppUd\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -1784,6 +1784,7 @@
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

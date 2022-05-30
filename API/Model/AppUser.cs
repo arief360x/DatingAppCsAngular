@@ -35,10 +35,10 @@ namespace API.Model
 
         public ICollection<Photo> Photos { get; set; }
 
-        public int GetAge()
-        {
-            return DateOfBirth.AgeCalculation();
-        }
+        // public int GetAge()
+        // {
+        //     return DateOfBirth.AgeCalculation();
+        // }
 
     }
 }
