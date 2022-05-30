@@ -8,6 +8,7 @@ namespace API.DTOs
     public class MemberDto
     {
         public int Id { get; set; }
+        public string PhotoUrl { get; set; }
 
         public string UserName { get; set; }
 
@@ -15,7 +16,7 @@ namespace API.DTOs
 
         public string KnownAs { get; set; }
 
-        public DateTime Created { get; set; } 
+        public DateTime Created { get; set; }
 
         public DateTime LastActive { get; set; }
 
