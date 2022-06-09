@@ -21,7 +21,7 @@ export class MembersService {
   //   }),
   // };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getMembers() {
     return this.http.get<Member[]>(this.baseUrl + 'users');
@@ -29,5 +29,9 @@ export class MembersService {
 
   getMember(username: string) {
     return this.http.get<Member>(this.baseUrl + 'users/' + username);
+  }
+
+  updateMember(member: Member) {
+    return this.http.put(this.baseUrl + 'users', member);
   }
 }
